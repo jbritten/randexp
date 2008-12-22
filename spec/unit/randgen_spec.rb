@@ -210,4 +210,31 @@ describe Randgen do
       female_list.include?(name.split(' ').first).should be_true
     end
   end
+
+  it "should generate a real city" do
+    city_list = RandCity.cities
+    100.times do
+      city = Randgen.city
+      city.should =~ /\w/
+      city_list.include?(city).should be_true
+    end
+  end
+
+  it "should generate a real state" do
+    state_list = RandState.states
+    100.times do
+      state = Randgen.state
+      state.should =~ /\w/
+      state_list.include?(state).should be_true
+    end
+  end
+
+  it "should generate a real country" do
+    country_list = RandCountry.countries
+    100.times do
+      country = Randgen.country
+      country.should =~ /\w/
+      country_list.include?(country).should be_true
+    end
+  end
 end
