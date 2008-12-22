@@ -69,4 +69,16 @@ class Randgen
     else          /(\d{3}-)?\d{3}-\d{4}/.gen
     end
   end
+
+  def self.city(options = {})
+    RandCity.cities(options).pick
+  end
+
+  def self.state(options = {})
+    RandState.states(options).pick
+  end
+  
+  def self.country(options = {})
+    RandCountry.countries(options).pick
+  end
 end
